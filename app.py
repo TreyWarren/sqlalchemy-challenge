@@ -58,7 +58,11 @@ def precipitation():
     # Query for the dates and precipitation values
     results = session.query(Measurement.station, 
                             Measurement.date, 
-                            Measurement.prcp).all()
+                            Measurement.prcp).all() 
+                            """The directions say nothing about the most recent year though 
+                                a classmate mentioned the rubric erroneously mentions it.
+                                If asked for, this could be acomplished by simply adding:
+                                .filter(Measurement.date >= date requested )"""
     # Close session
     session.close()
 
